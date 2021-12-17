@@ -72,8 +72,10 @@ module.exports = {
 ```
 
 3. nuxt.config.js
+```
 export default {
   buildModules: [
     '@nuxtjs/eslint-module'
   ],
 }
+```
