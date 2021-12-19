@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer app clipped v-model="drawer">
+    <v-navigation-drawer v-model="drawer" app clipped>
       <v-list subheader>
         <v-list-item
           v-for="item in navItems"
@@ -20,13 +20,16 @@
     <v-app-bar app flat clipped-left>
       <v-app-bar-nav-icon @click="drawer = !drawer" />
       <v-toolbar-title
-        @click="$router.push('/')"
         style="cursor:pointer"
+        @click="$router.push('/')"
       >
         Title
       </v-toolbar-title>
       <v-spacer />
-      <v-btn depressed>
+      <v-btn v-if="authenticated" depressed @click="onSignOut">
+        ログアウト
+      </v-btn>
+      <v-btn v-else depressed @click="$router.push('/auth/sign-in1')">
         ログイン
       </v-btn>
     </v-app-bar>
@@ -34,6 +37,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   data () {
     return {
@@ -50,6 +54,15 @@ export default {
           link: ''
         }
       ]
+    }
+  },
+  computed: mapState({
+    authenticated: state => state.user.authenticated
+  }),
+  methods: {
+    async onSignOut () {
+      await this.$store.dispatch('user/signOut')
+      location.reload()
     }
   }
 }
