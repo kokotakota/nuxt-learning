@@ -1,5 +1,5 @@
 <template>
-  <v-container pt-10>
+  <v-container>
     <v-card width="400px" class="mx-auto">
       <v-card-title>ログイン</v-card-title>
       <v-card-text>

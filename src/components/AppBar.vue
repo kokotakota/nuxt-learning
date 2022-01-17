@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-navigation-drawer v-model="drawer" app clipped>
-      <v-list subheader>
+      <v-list>
         <v-list-item
           v-for="item in navItems"
           :key="item.text"

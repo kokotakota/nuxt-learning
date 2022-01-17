@@ -2,7 +2,7 @@
   <v-app>
     <AppBar />
     <v-main>
-      <Nuxt />
+      <Nuxt class="pt-10" />
     </v-main>
   </v-app>
 </template>
