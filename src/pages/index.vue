@@ -32,7 +32,7 @@ export default {
         { name: 'ログイン画面1', to: '/auth/sign-in1' },
         { name: 'ログイン画面2', to: '/auth/sign-in2' },
         { name: 'グラフ画面（Chart.js v2系）', to: '/chart-v2' },
-        { name: 'XX画面', to: '/' }
+        { name: '設定画面', to: '/settings' }
       ]
     }
   }
