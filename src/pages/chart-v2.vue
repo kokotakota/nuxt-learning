@@ -9,7 +9,8 @@
         :xl="xl"
         class="d-flex justify-center"
       >
-        <LineChart />
+        <!-- サイズはstyleで指定する -->
+        <LineChart style="width: 300px;" />
       </v-col>
     </v-row>
   </v-container>

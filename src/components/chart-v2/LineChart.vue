@@ -17,25 +17,35 @@ export default {
         ]
       },
       options: {
+        responsive: true, // サイズ変更可能にするか
+        maintainAspectRatio: false, // サイズ変更時に元の縦横の比率を維持するか
         // 凡例ラベル
         legend: {
           // 非表示にする場合
-          // display: false,
-          // ラベルのクリックイベントをOFFにする場合
-          onClick: () => false
+          display: false
+          // ラベルのクリックイベントをdisabledにする場合
+          // onClick: () => false
         },
         scales: {
+          xAxes: [
+            {
+              // 軸ラベル
+              scaleLabel: {
+                display: true,
+                labelString: '月'
+              }
+            }
+          ],
           yAxes: [
             {
+              scaleLabel: {
+                display: true,
+                labelString: '売上'
+              },
               // メモリ設定
               ticks: {
-                stepSize: 2000,
-                // メモリ範囲を固定する場合
-                // max: 25000,
-                // min: 0,
-                // メモリ範囲を半固定する場合（範囲を超えるデータがあれば自動でその値まで範囲を拡張）
-                suggestedMin: 20000,
-                suggestedMax: 0
+                // メモリ範囲の下限を0に固定する場合
+                min: 0
               }
             }
           ]
@@ -44,12 +54,9 @@ export default {
         tooltips: {
           callbacks: {
             label: (tooltipItems, data) => {
-              // data.datasetsから凡例ラベルを取得
-              const label = data.datasets[tooltipItems.datasetIndex].label
-
-              // tooltipItemsからはツールチップで通常表示される内容（値など）が取得できる
+              // tooltipItemsからツールチップで通常表示される内容（値など）が取得できる
               const value = Number(tooltipItems.value)
-              return `${label}: ${value.toLocaleString()}万円`
+              return value.toLocaleString()
             }
           }
         }
