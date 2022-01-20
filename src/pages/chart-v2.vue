@@ -10,7 +10,7 @@
         class="d-flex justify-center"
       >
         <!-- サイズはstyleで指定する -->
-        <LineChart style="width: 300px;" />
+        <LineChart style="height: 300px; width: 100%;" />
       </v-col>
     </v-row>
   </v-container>
