@@ -34,7 +34,8 @@ export default {
         { name: 'グラフ画面（Chart.js v2系）', to: '/chart-v2' },
         { name: '設定画面', to: '/settings' },
         { name: '自動データ更新', to: '/auto-reload/refetch' },
-        { name: '自動画面更新', to: '/auto-reload/reload' }
+        { name: '自動画面更新', to: '/auto-reload/reload' },
+        { name: 'クレジットカード入力フォーム', to: '/form/credit-card' }
       ]
     }
   }
