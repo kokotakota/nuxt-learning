@@ -2,6 +2,8 @@
   <v-container>
     <v-row>
       <v-col
+        v-for="component in components"
+        :key="component.componentName"
         :cols="xs"
         :sm="sm"
         :md="md"
@@ -9,8 +11,7 @@
         :xl="xl"
         class="d-flex justify-center"
       >
-        <!-- サイズはstyleで指定する -->
-        <LineChart style="height: 300px; width: 100%;" />
+        <component :is="component.componentName" style="height: 300px; width: 100%;" />
       </v-col>
     </v-row>
   </v-container>
@@ -24,7 +25,11 @@ export default {
       sm: '6',
       md: '4',
       lg: '4',
-      xl: '3'
+      xl: '3',
+      components: [
+        { name: '折れ線グラフ', componentName: 'LineChart' },
+        { name: '折れ線グラフ(複数)', componentName: 'MultiLineChart' }
+      ]
     }
   }
 }
