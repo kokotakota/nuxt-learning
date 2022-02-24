@@ -2,10 +2,9 @@
   <v-container>
     <input
       v-model="number"
-      @input="event => number = formatCardNumber(event.target.value)"
       style="border: 1px solid;"
-    />
-    {{ number }}
+      @input="number = formatCardNumber($event.target.value)"
+    ></input>
   </v-container>
 </template>
 
