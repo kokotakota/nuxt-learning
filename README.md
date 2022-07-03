@@ -44,7 +44,7 @@ module.exports = {
 ## ESLint JavaScript Standard Style
 1. インストール
 ```
-yarn add --dev @babel/eslint-parser @nuxtjs/eslint-config @nuxtjs/eslint-module eslint eslint-loader eslint-plugin-standard eslint-plugin-nuxt eslint-plugin-vue eslint-plugin-import eslint-plugin-node eslint-plugin-promise
+yarn add --dev @babel/eslint-parser @nuxtjs/eslint-config @nuxtjs/eslint-module eslint eslint-loader eslint-config-standard eslint-plugin-nuxt eslint-plugin-vue eslint-plugin-import eslint-plugin-n eslint-plugin-promise
 ```
 
 2. .eslintrc.js
@@ -61,13 +61,15 @@ module.exports = {
   },
   extends: [
     'standard',
-    'plugin:vue/essential',
-    '@nuxtjs'
+    '@nuxtjs',
+    'plugin:nuxt/recommended',
   ],
   plugins: [
   ],
   // add your custom rules here
-  rules: {}
+  rules: {
+    'vue/multi-word-component-names': 'off'
+  }
 }
 ```
 

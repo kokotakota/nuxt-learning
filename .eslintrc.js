@@ -10,13 +10,13 @@ module.exports = {
   },
   extends: [
     'standard',
-    'plugin:vue/essential',
-    '@nuxtjs'
+    '@nuxtjs',
+    'plugin:nuxt/recommended',
   ],
   plugins: [
   ],
   // add your custom rules here
   rules: {
-    "vue/multi-word-component-names": 0
+    'vue/multi-word-component-names': 'off'
   }
 }
